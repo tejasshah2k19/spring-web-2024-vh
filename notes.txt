@@ -1,0 +1,26 @@
+create maven web app 
+
+add all the dep -> pom.xml  { spring web mvc - 5.3.33 }
+
+ 
+create folder views inside web-inf folder 
+
+create spring.xml inside web-inf 
+	copy demo spring.xml from net into your spring.xml 
+	add 1 more namespace mvc with reference of context 
+	
+	now add 3 configuration inside spring.xml 
+		<context:component-scan base-package="com" />
+	
+		<mvc:annotation-driven></mvc:annotation-driven>
+	
+		<bean id="jspViewResolver"
+			class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/WEB-INF/views/" />
+			<property name="suffix" value=".jsp" />
+		</bean>
+	
+now lets configure your tomcat for DispatcherServlet 
+	goto the web.xml and map DispatcherServlet 
+	
+			 
