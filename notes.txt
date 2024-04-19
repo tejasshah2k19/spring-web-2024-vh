@@ -21,6 +21,26 @@ create spring.xml inside web-inf
 		</bean>
 	
 now lets configure your tomcat for DispatcherServlet 
-	goto the web.xml and map DispatcherServlet 
+	goto the web.xml and map DispatcherServlet inside web-app tag 
 	
-			 
+	<servlet>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring.xml</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	
+---------------------------------------------------------------------
+
+
+
+
